@@ -34,7 +34,7 @@ func ChatListWS(ctx context.Context) {
 	}
 }
 
-func SendBroadCast() {
+func SendBroadCast(nickname string, message string) {
 	// 连接池广播
 	wsInfo.RLockFunc(func(m map[interface{}]interface{}) {
 		for ws := range m {

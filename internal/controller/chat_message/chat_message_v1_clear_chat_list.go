@@ -10,7 +10,7 @@ import (
 
 func (c *ControllerV1) ClearChatList(_ context.Context, _ *v1.ClearChatListReq) (res *v1.ClearChatListRes, err error) {
 	dao.ClearChat()
-	chat_message.SendBroadCast()
+	chat_message.SendBroadCast("", "")
 	res = &v1.ClearChatListRes{
 		IsSuccess: true,
 	}

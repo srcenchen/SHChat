@@ -42,6 +42,7 @@ var (
 					chat_message.NewV1(),
 				)
 			})
+
 			s.Run()
 			return nil
 		},

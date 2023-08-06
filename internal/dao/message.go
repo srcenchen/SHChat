@@ -13,6 +13,13 @@ func GetChatList() []entity.MessageTable {
 	return chatList
 }
 
+// GetLeastChat 获取最新一条聊天记录
+func GetLeastChat() entity.MessageTable {
+	var chat entity.MessageTable
+	service.GetDatabase().Last(&chat)
+	return chat
+}
+
 // SendChat 添加聊天记录
 func SendChat(message string, nickname string) {
 	// 获取当前时间
