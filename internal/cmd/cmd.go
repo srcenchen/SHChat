@@ -14,8 +14,8 @@ import (
 
 var (
 	Main = gcmd.Command{
-		Name:  "main",
-		Usage: "main",
+		Name:  "SHChat",
+		Usage: "SHChat",
 		Brief: "start http server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			initDir()          // 初始化文件夹
@@ -42,7 +42,7 @@ var (
 					chat_message.NewV1(),
 				)
 			})
-
+			s.EnableHTTPS("manifest/certs/shchat.pem", "manifest/certs/shchat.key")
 			s.Run()
 			return nil
 		},

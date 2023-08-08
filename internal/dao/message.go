@@ -14,8 +14,8 @@ func GetChatList() []entity.MessageTable {
 }
 
 // GetLeastChat 获取最新一条聊天记录
-func GetLeastChat() entity.MessageTable {
-	var chat entity.MessageTable
+func GetLeastChat() []entity.MessageTable {
+	var chat []entity.MessageTable
 	service.GetDatabase().Last(&chat)
 	return chat
 }
